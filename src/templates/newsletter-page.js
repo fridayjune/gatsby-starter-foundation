@@ -17,6 +17,11 @@ export const pageQuery = graphql`
     }
   }
 `
+
+function shoot() {
+  window.open("https://93d908ed-trial.flowpaper.com/CopyofNewsletter21/#page=1");
+}
+
 const NewsletterPage = ({ data }) => {
 	const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
@@ -30,7 +35,7 @@ const NewsletterPage = ({ data }) => {
 			<div className="wrapper">
 				<h1>{frontmatter.title}</h1>
 				<article dangerouslySetInnerHTML={{ __html: html }} />
-				<Button type="button" color="primary" onclick="window.location.href='https://93d908ed-trial.flowpaper.com/CopyofNewsletter21/#page=1">Primary</Button>
+				<Button type="button" color="primary" onClick={shoot}>Primary</Button>
 			</div>
 		</Layout>
 	)
